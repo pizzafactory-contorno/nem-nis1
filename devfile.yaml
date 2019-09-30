@@ -1,0 +1,32 @@
+metadata:
+  name: nem-nis1-sample
+components:
+  - id: che-incubator/typescript/latest
+    memoryLimit: 512Mi
+    type: chePlugin
+  - mountSources: true
+    endpoints:
+      - name: nodejs
+        port: 4100
+    memoryLimit: 512Mi
+    type: dockerimage
+    alias: nodejs
+    image: 'quay.io/eclipse/che-nodejs8-centos:nightly'
+  - mountSources: false
+    endpoints:
+      - name: wallet
+        port: 7777
+      - name: NIS
+        port: 7890
+      - name: servant
+        port: 7880
+      - name: NCC
+        port: 8989
+    memoryLimit: 2048Mi
+    type: dockerimage
+    volumes:
+      - name: nem
+        containerPath: /home/nem
+    alias: nem-nis1
+    image: pizzafactory0contorno/nem-nis1
+apiVersion: 1.0.0
