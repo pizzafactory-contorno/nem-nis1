@@ -1,6 +1,6 @@
 # nem-nis1
 
-NIS (NEM Infratsructure server) for PizzaFactory/Camino
+PizzaFactory/Contorno side dish container that contains NIS (NEM Infratsructure server).
 
 ## What's this?
 
